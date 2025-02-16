@@ -18,7 +18,7 @@ We deployed **LLMs** locally on **XR devices** by customizing the **[`llama.cpp`
 
 
 ## 🎥 **LoXR Video Demo**
-[LoXR Video](https://www.youtube.com/watch?v=dGmjYDRkdug)  
+[LoXR Video](https://youtu.be/7TrXLekrEyI)  
  ---
 
 ## 🔥 Script for the the Key Tests, including:  
