@@ -17,7 +17,10 @@ LoXR is built upon [`llama.cpp`](https://github.com/ggml-org/llama.cpp), an exce
 
 ---
 
-## 🔥 **Script for the the Key Tests, including: **  
+🎥 **Watch the demo video**: [LoXR: Performance Evaluation of LLMs on XR Devices](https://www.youtube.com/watch?v=dGmjYDRkdug)  
+
+
+## 🔥 Script for the the Key Tests, including:  
 
 ✅ **Prompt Processing Test** – Measures the efficiency of input processing.  
 ✅ **Token Generation Test** – Evaluates LLM inference speed in tokens per second.  
@@ -25,6 +28,10 @@ LoXR is built upon [`llama.cpp`](https://github.com/ggml-org/llama.cpp), an exce
 ✅ **Battery & Memory Consumption Analysis** – Tracks resource utilization on XR devices.  
 
 ---
+
+
+
+
 
 ## 🛠️ **Installation**  
 
