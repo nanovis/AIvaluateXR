@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\build\CMakeFiles\78a99ca36286a9fd37609437be5998d1\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{CAC926C7-10EF-35E2-AC4B-DCCD815E1374}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,1 @@
+D:\git3\MagicLeap\LLM\dd\llama.cpp\build\common\build_info.dir\Release\build_info.lib

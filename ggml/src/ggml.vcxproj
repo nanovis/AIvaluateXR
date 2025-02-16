@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C1838238-7DA1-3D87-863E-1119F5BB0CF9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ggml</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.6.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\git3\MagicLeap\LLM\dd\llama.cpp\build\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ggml.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ggml</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\git3\MagicLeap\LLM\dd\llama.cpp\build\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ggml.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ggml</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\git3\MagicLeap\LLM\dd\llama.cpp\build\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">ggml.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">ggml</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\git3\MagicLeap\LLM\dd\llama.cpp\build\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">ggml.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">ggml</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions512</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <MinimalRebuild></MinimalRebuild>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;GGML_USE_CUDA;GGML_SHARED;GGML_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_SCHED_MAX_COPIES=4;GGML_USE_OPENMP;GGML_USE_LLAMAFILE;GGML_CUDA_DMMV_X=32;GGML_CUDA_MMV_Y=1;K_QUANTS_PER_ITERATION=2;GGML_CUDA_PEER_MAX_BATCH_SIZE=128;GGML_CUDA_USE_GRAPHS;_XOPEN_SOURCE=600;CMAKE_INTDIR="Debug";ggml_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;GGML_USE_CUDA;GGML_SHARED;GGML_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_SCHED_MAX_COPIES=4;GGML_USE_OPENMP;GGML_USE_LLAMAFILE;GGML_CUDA_DMMV_X=32;GGML_CUDA_MMV_Y=1;K_QUANTS_PER_ITERATION=2;GGML_CUDA_PEER_MAX_BATCH_SIZE=128;GGML_CUDA_USE_GRAPHS;_XOPEN_SOURCE=600;CMAKE_INTDIR=\"Debug\";ggml_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;GGML_USE_CUDA;GGML_SHARED;GGML_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_SCHED_MAX_COPIES=4;GGML_USE_OPENMP;GGML_USE_LLAMAFILE;GGML_CUDA_DMMV_X=32;GGML_CUDA_MMV_Y=1;K_QUANTS_PER_ITERATION=2;GGML_CUDA_PEER_MAX_BATCH_SIZE=128;GGML_CUDA_USE_GRAPHS;_XOPEN_SOURCE=600;CMAKE_INTDIR="Debug";ggml_EXPORTS</Defines>
+      <AdditionalOptions>%(AdditionalOptions) --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_75,code=[compute_75,sm_75] -Xcompiler="/EHsc -Zi -Ob0 /arch:AVX512"</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <FastMath>true</FastMath>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <Optimization>Od</Optimization>
+      <Runtime>MDd</Runtime>
+      <RuntimeChecks>RTC1</RuntimeChecks>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <TypeInfo>true</TypeInfo>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreLinkEvent>
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message>Auto build dll exports</Message>
+      <Command>setlocal
+cd D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ggml\src
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E __create_def D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/ggml.dir/Debug/exports.def D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/ggml.dir/Debug//objects.txt
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cudart.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cublas.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cublasLt.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cuda.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/Debug/ggml.lib</ImportLibrary>
+      <ModuleDefinitionFile>D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/ggml.dir/Debug/exports.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>D:/git3/MagicLeap/LLM/dd/llama.cpp/build/bin/Debug/ggml.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets </AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions512</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <MinimalRebuild></MinimalRebuild>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GGML_USE_CUDA;GGML_SHARED;GGML_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_SCHED_MAX_COPIES=4;GGML_USE_OPENMP;GGML_USE_LLAMAFILE;GGML_CUDA_DMMV_X=32;GGML_CUDA_MMV_Y=1;K_QUANTS_PER_ITERATION=2;GGML_CUDA_PEER_MAX_BATCH_SIZE=128;GGML_CUDA_USE_GRAPHS;_XOPEN_SOURCE=600;CMAKE_INTDIR="Release";ggml_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GGML_USE_CUDA;GGML_SHARED;GGML_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_SCHED_MAX_COPIES=4;GGML_USE_OPENMP;GGML_USE_LLAMAFILE;GGML_CUDA_DMMV_X=32;GGML_CUDA_MMV_Y=1;K_QUANTS_PER_ITERATION=2;GGML_CUDA_PEER_MAX_BATCH_SIZE=128;GGML_CUDA_USE_GRAPHS;_XOPEN_SOURCE=600;CMAKE_INTDIR=\"Release\";ggml_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;NDEBUG;GGML_USE_CUDA;GGML_SHARED;GGML_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_SCHED_MAX_COPIES=4;GGML_USE_OPENMP;GGML_USE_LLAMAFILE;GGML_CUDA_DMMV_X=32;GGML_CUDA_MMV_Y=1;K_QUANTS_PER_ITERATION=2;GGML_CUDA_PEER_MAX_BATCH_SIZE=128;GGML_CUDA_USE_GRAPHS;_XOPEN_SOURCE=600;CMAKE_INTDIR="Release";ggml_EXPORTS</Defines>
+      <AdditionalOptions>%(AdditionalOptions) --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_75,code=[compute_75,sm_75] -Xcompiler="/EHsc -Ob2 /arch:AVX512"</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <FastMath>true</FastMath>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <Optimization>O2</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <TypeInfo>true</TypeInfo>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreLinkEvent>
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message>Auto build dll exports</Message>
+      <Command>setlocal
+cd D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ggml\src
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E __create_def D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/ggml.dir/Release/exports.def D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/ggml.dir/Release//objects.txt
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cudart.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cublas.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cublasLt.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cuda.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/Release/ggml.lib</ImportLibrary>
+      <ModuleDefinitionFile>D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/ggml.dir/Release/exports.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>D:/git3/MagicLeap/LLM/dd/llama.cpp/build/bin/Release/ggml.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets </AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions512</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <MinimalRebuild></MinimalRebuild>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GGML_USE_CUDA;GGML_SHARED;GGML_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_SCHED_MAX_COPIES=4;GGML_USE_OPENMP;GGML_USE_LLAMAFILE;GGML_CUDA_DMMV_X=32;GGML_CUDA_MMV_Y=1;K_QUANTS_PER_ITERATION=2;GGML_CUDA_PEER_MAX_BATCH_SIZE=128;GGML_CUDA_USE_GRAPHS;_XOPEN_SOURCE=600;CMAKE_INTDIR="MinSizeRel";ggml_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GGML_USE_CUDA;GGML_SHARED;GGML_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_SCHED_MAX_COPIES=4;GGML_USE_OPENMP;GGML_USE_LLAMAFILE;GGML_CUDA_DMMV_X=32;GGML_CUDA_MMV_Y=1;K_QUANTS_PER_ITERATION=2;GGML_CUDA_PEER_MAX_BATCH_SIZE=128;GGML_CUDA_USE_GRAPHS;_XOPEN_SOURCE=600;CMAKE_INTDIR=\"MinSizeRel\";ggml_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;NDEBUG;GGML_USE_CUDA;GGML_SHARED;GGML_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_SCHED_MAX_COPIES=4;GGML_USE_OPENMP;GGML_USE_LLAMAFILE;GGML_CUDA_DMMV_X=32;GGML_CUDA_MMV_Y=1;K_QUANTS_PER_ITERATION=2;GGML_CUDA_PEER_MAX_BATCH_SIZE=128;GGML_CUDA_USE_GRAPHS;_XOPEN_SOURCE=600;CMAKE_INTDIR="MinSizeRel";ggml_EXPORTS</Defines>
+      <AdditionalOptions>%(AdditionalOptions) --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_75,code=[compute_75,sm_75] -Xcompiler="/EHsc -Ob1 /arch:AVX512"</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <FastMath>true</FastMath>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <Optimization>O1</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <TypeInfo>true</TypeInfo>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreLinkEvent>
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message>Auto build dll exports</Message>
+      <Command>setlocal
+cd D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ggml\src
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E __create_def D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/ggml.dir/MinSizeRel/exports.def D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/ggml.dir/MinSizeRel//objects.txt
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cudart.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cublas.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cublasLt.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cuda.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/MinSizeRel/ggml.lib</ImportLibrary>
+      <ModuleDefinitionFile>D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/ggml.dir/MinSizeRel/exports.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>D:/git3/MagicLeap/LLM/dd/llama.cpp/build/bin/MinSizeRel/ggml.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets </AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions512</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <MinimalRebuild></MinimalRebuild>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GGML_USE_CUDA;GGML_SHARED;GGML_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_SCHED_MAX_COPIES=4;GGML_USE_OPENMP;GGML_USE_LLAMAFILE;GGML_CUDA_DMMV_X=32;GGML_CUDA_MMV_Y=1;K_QUANTS_PER_ITERATION=2;GGML_CUDA_PEER_MAX_BATCH_SIZE=128;GGML_CUDA_USE_GRAPHS;_XOPEN_SOURCE=600;CMAKE_INTDIR="RelWithDebInfo";ggml_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GGML_USE_CUDA;GGML_SHARED;GGML_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_SCHED_MAX_COPIES=4;GGML_USE_OPENMP;GGML_USE_LLAMAFILE;GGML_CUDA_DMMV_X=32;GGML_CUDA_MMV_Y=1;K_QUANTS_PER_ITERATION=2;GGML_CUDA_PEER_MAX_BATCH_SIZE=128;GGML_CUDA_USE_GRAPHS;_XOPEN_SOURCE=600;CMAKE_INTDIR=\"RelWithDebInfo\";ggml_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;NDEBUG;GGML_USE_CUDA;GGML_SHARED;GGML_BUILD;_CRT_SECURE_NO_WARNINGS;GGML_SCHED_MAX_COPIES=4;GGML_USE_OPENMP;GGML_USE_LLAMAFILE;GGML_CUDA_DMMV_X=32;GGML_CUDA_MMV_Y=1;K_QUANTS_PER_ITERATION=2;GGML_CUDA_PEER_MAX_BATCH_SIZE=128;GGML_CUDA_USE_GRAPHS;_XOPEN_SOURCE=600;CMAKE_INTDIR="RelWithDebInfo";ggml_EXPORTS</Defines>
+      <AdditionalOptions>%(AdditionalOptions) --generate-code=arch=compute_52,code=[compute_52,sm_52] --generate-code=arch=compute_61,code=[compute_61,sm_61] --generate-code=arch=compute_70,code=[compute_70,sm_70] --generate-code=arch=compute_75,code=[compute_75,sm_75] -Xcompiler="/EHsc -Zi -Ob1 /arch:AVX512"</AdditionalOptions>
+      <CodeGeneration></CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <FastMath>true</FastMath>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <Optimization>O2</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <TypeInfo>true</TypeInfo>
+      <UseHostInclude>false</UseHostInclude>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\..\include;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\.;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreLinkEvent>
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message>Auto build dll exports</Message>
+      <Command>setlocal
+cd D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ggml\src
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E __create_def D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/ggml.dir/RelWithDebInfo/exports.def D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/ggml.dir/RelWithDebInfo//objects.txt
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cudart.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cublas.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cublasLt.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\lib\x64\cuda.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/lib/x64;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/RelWithDebInfo/ggml.lib</ImportLibrary>
+      <ModuleDefinitionFile>D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/ggml.dir/RelWithDebInfo/exports.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>D:/git3/MagicLeap/LLM/dd/llama.cpp/build/bin/RelWithDebInfo/ggml.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets </AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/git3/MagicLeap/LLM/dd/llama.cpp/ggml/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/git3/MagicLeap/LLM/dd/llama.cpp -BD:/git3/MagicLeap/LLM/dd/llama.cpp/build --check-stamp-file D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCUDACompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCUDACompilerABI.cu;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCUDAInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCUDACompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompilerSupport.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeTestCUDACompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CrayClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVIDIA-CUDA.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVIDIA.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\OrangeC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\TIClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.30\Modules\FindCUDAToolkit.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindOpenMP.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAArchitecturesAll.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAArchitecturesNative.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAArchitecturesValidate.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAFilterImplicitLibs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeDetermineLinkerId.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeNVCCFilterImplicitInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeNVCCParseImplicitInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-NVIDIA-CUDA.cmake;D:\git3\MagicLeap\LLM\dd\llama.cpp\build\CMakeFiles\3.30.2\CMakeCUDACompiler.cmake;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\cmake\FindSIMD.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ggml\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/git3/MagicLeap/LLM/dd/llama.cpp/ggml/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/git3/MagicLeap/LLM/dd/llama.cpp -BD:/git3/MagicLeap/LLM/dd/llama.cpp/build --check-stamp-file D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCUDACompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCUDACompilerABI.cu;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCUDAInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCUDACompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompilerSupport.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeTestCUDACompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CrayClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVIDIA-CUDA.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVIDIA.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\OrangeC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\TIClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.30\Modules\FindCUDAToolkit.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindOpenMP.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAArchitecturesAll.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAArchitecturesNative.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAArchitecturesValidate.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAFilterImplicitLibs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeDetermineLinkerId.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeNVCCFilterImplicitInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeNVCCParseImplicitInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-NVIDIA-CUDA.cmake;D:\git3\MagicLeap\LLM\dd\llama.cpp\build\CMakeFiles\3.30.2\CMakeCUDACompiler.cmake;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\cmake\FindSIMD.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ggml\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/git3/MagicLeap/LLM/dd/llama.cpp/ggml/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/git3/MagicLeap/LLM/dd/llama.cpp -BD:/git3/MagicLeap/LLM/dd/llama.cpp/build --check-stamp-file D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCUDACompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCUDACompilerABI.cu;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCUDAInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCUDACompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompilerSupport.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeTestCUDACompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CrayClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVIDIA-CUDA.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVIDIA.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\OrangeC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\TIClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.30\Modules\FindCUDAToolkit.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindOpenMP.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAArchitecturesAll.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAArchitecturesNative.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAArchitecturesValidate.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAFilterImplicitLibs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeDetermineLinkerId.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeNVCCFilterImplicitInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeNVCCParseImplicitInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-NVIDIA-CUDA.cmake;D:\git3\MagicLeap\LLM\dd\llama.cpp\build\CMakeFiles\3.30.2\CMakeCUDACompiler.cmake;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\cmake\FindSIMD.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ggml\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/git3/MagicLeap/LLM/dd/llama.cpp/ggml/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/git3/MagicLeap/LLM/dd/llama.cpp -BD:/git3/MagicLeap/LLM/dd/llama.cpp/build --check-stamp-file D:/git3/MagicLeap/LLM/dd/llama.cpp/build/ggml/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCUDACompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCUDACompilerABI.cu;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCUDAInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCUDACompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeDetermineCompilerSupport.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeTestCUDACompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CrayClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVIDIA-CUDA.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\NVIDIA.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\OrangeC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\TIClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.30\Modules\FindCUDAToolkit.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindOpenMP.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAArchitecturesAll.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAArchitecturesNative.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAArchitecturesValidate.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeCUDAFilterImplicitLibs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeDetermineLinkerId.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeNVCCFilterImplicitInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CMakeNVCCParseImplicitInfo.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-NVIDIA-CUDA.cmake;D:\git3\MagicLeap\LLM\dd\llama.cpp\build\CMakeFiles\3.30.2\CMakeCUDACompiler.cmake;D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\cmake\FindSIMD.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ggml\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\include\ggml.h" />
+    <ClInclude Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\include\ggml-alloc.h" />
+    <ClInclude Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\include\ggml-backend.h" />
+    <ClCompile Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml.c" />
+    <ClCompile Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-alloc.c" />
+    <ClCompile Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-backend.c" />
+    <ClCompile Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-quants.c" />
+    <ClInclude Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-quants.h" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\acc.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\arange.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\argsort.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\binbcast.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\clamp.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\concat.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\conv-transpose-1d.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\convert.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\cpy.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\diagmask.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\dmmv.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\fattn-tile-f16.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\fattn-tile-f32.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\fattn.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\getrows.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\im2col.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\mmq.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\mmvq.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\norm.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\pad.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\pool2d.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\quantize.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\rope.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\scale.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\softmax.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\sumrows.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\tsembd.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\unary.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\upscale.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-wmma-f16-instance-kqfloat-cpb16.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-wmma-f16-instance-kqfloat-cpb32.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-wmma-f16-instance-kqhalf-cpb16.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-wmma-f16-instance-kqhalf-cpb32.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-wmma-f16-instance-kqhalf-cpb8.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\mmq-instance-iq4_nl.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\mmq-instance-iq4_xs.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\mmq-instance-q2_k.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\mmq-instance-q3_k.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\mmq-instance-q4_0.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\mmq-instance-q4_1.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\mmq-instance-q4_k.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\mmq-instance-q5_0.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\mmq-instance-q5_1.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\mmq-instance-q5_k.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\mmq-instance-q6_k.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\mmq-instance-q8_0.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-vec-f16-instance-hs128-q4_0-q4_0.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-vec-f32-instance-hs128-q4_0-q4_0.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-vec-f16-instance-hs128-q8_0-q8_0.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-vec-f32-instance-hs128-q8_0-q8_0.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-vec-f16-instance-hs128-f16-f16.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-vec-f16-instance-hs256-f16-f16.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-vec-f16-instance-hs64-f16-f16.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-vec-f32-instance-hs128-f16-f16.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-vec-f32-instance-hs256-f16-f16.cu" />
+    <CudaCompile Include="..\..\..\ggml\src\ggml-cuda\template-instances\fattn-vec-f32-instance-hs64-f16-f16.cu" />
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\acc.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\arange.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\argsort.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\binbcast.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\clamp.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\common.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\concat.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\conv-transpose-1d.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\convert.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\cpy.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\dequantize.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\diagmask.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\dmmv.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\fattn-common.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\fattn-tile-f16.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\fattn-tile-f32.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\fattn-vec-f16.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\fattn-vec-f32.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\fattn-wmma-f16.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\fattn.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\getrows.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\im2col.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\mma.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\mmq.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\mmvq.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\norm.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\pad.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\pool2d.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\quantize.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\rope.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\scale.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\softmax.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\sumrows.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\tsembd.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\unary.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\upscale.cuh">
+    </None>
+    <None Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-cuda\vecdotq.cuh">
+    </None>
+    <ClInclude Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\include\ggml-cuda.h" />
+    <ClCompile Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\llamafile\sgemm.cpp" />
+    <ClInclude Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\llamafile\sgemm.h" />
+    <ClCompile Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-aarch64.c" />
+    <ClInclude Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-aarch64.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ZERO_CHECK.vcxproj">
+      <Project>{40E6D849-97E9-370D-AE47-84E67A99DA1C}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.6.targets" />
+  </ImportGroup>
+</Project>
