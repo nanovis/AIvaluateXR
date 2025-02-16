@@ -2,8 +2,8 @@
 ![Teaser](images/LoXR.jpg)
 
 ## 🏆 **Acknowledgment**
-LoXR is built upon [`llama.cpp`](https://github.com/ggml-org/llama.cpp), an excellent C++ implementation for running LLMs efficiently on various hardware. 
-We deployed **LLLMS** locally on XR devices by customizing the [`llama.cpp`](https://github.com/ggml-org/llama.cpp) for four different XR devices. 
+LoXR is built upon **[`llama.cpp`](https://github.com/ggml-org/llama.cpp)**.  [`llama.cpp`](https://github.com/ggml-org/llama.cpp) is an excellent C++ implementation for running LLMs efficiently on various hardware. 
+We deployed **LLLMS** locally on **XR devices** by customizing the **[`llama.cpp`](https://github.com/ggml-org/llama.cpp)** for four different XR devices. 
 
 ## 🚀 **Overview**  
 
@@ -18,8 +18,8 @@ We deployed **LLLMS** locally on XR devices by customizing the [`llama.cpp`](htt
 
 
 ## 🎥 **LoXR Video Demo**
-[![LoXR Video](https://img.youtube.com/vi/dGmjYDRkdug/maxresdefault.jpg)](https://www.youtube.com/watch?v=dGmjYDRkdug) 
-
+[LoXR Video](https://www.youtube.com/watch?v=dGmjYDRkdug)  
+ ---
 
 ## 🔥 Script for the the Key Tests, including:  
 
