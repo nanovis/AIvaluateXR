@@ -1,1 +1,0 @@
-D:\git3\MagicLeap\LLM\dd\llama.cpp\build\examples\llava\llava.dir\Release\llava.lib

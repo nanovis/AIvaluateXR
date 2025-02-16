@@ -1,6 +1,0 @@
-D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml.c;D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ggml\src\ggml.dir\Release\ggml.obj
-D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-alloc.c;D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ggml\src\ggml.dir\Release\ggml-alloc.obj
-D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-backend.c;D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ggml\src\ggml.dir\Release\ggml-backend.obj
-D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-quants.c;D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ggml\src\ggml.dir\Release\ggml-quants.obj
-D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\llamafile\sgemm.cpp;D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ggml\src\ggml.dir\Release\sgemm.obj
-D:\git3\MagicLeap\LLM\dd\llama.cpp\ggml\src\ggml-aarch64.c;D:\git3\MagicLeap\LLM\dd\llama.cpp\build\ggml\src\ggml.dir\Release\ggml-aarch64.obj
