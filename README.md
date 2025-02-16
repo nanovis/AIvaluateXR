@@ -17,7 +17,9 @@ LoXR is built upon [`llama.cpp`](https://github.com/ggml-org/llama.cpp), an exce
 
 ---
 
-🎥 **Watch the demo video**: [LoXR: Performance Evaluation of LLMs on XR Devices](https://www.youtube.com/watch?v=dGmjYDRkdug)  
+
+## 🎥 **LoXR Video Demo**
+[![LoXR Video](https://img.youtube.com/vi/dGmjYDRkdug/maxresdefault.jpg)](https://www.youtube.com/watch?v=dGmjYDRkdug) 
 
 
 ## 🔥 Script for the the Key Tests, including:  
