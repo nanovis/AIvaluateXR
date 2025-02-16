@@ -48,7 +48,7 @@ cd LoXR
 
   Dawar Khan, Xinyu Liu, Omar Mena, Donggang Jia, Alexandre Kouyoumdjian, Ivan Viola,
 "LoXR: Performance Evaluation of Locally Executing LLMs on XR Devices",
-arXiv preprint, 2024.
+arXiv preprint, 2025.
 
 If you find our work useful, please consider citing our paper:
 ```bibtex
