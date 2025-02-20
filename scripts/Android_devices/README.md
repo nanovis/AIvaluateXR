@@ -12,15 +12,15 @@ cd ./llama.cpp
 ### 2. Cross-compile using Android NDK
 #### For Magic Leap 2
 ```
-$ cmake \
+$ cmake \ 
   -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake \
-  -DANDROID_ABI=arm64-v8a \
+  -DANDROID_ABI=x86_64 \
   -DANDROID_PLATFORM=latest \
-  -DCMAKE_C_FLAGS="-march=armv8.7a" \
+  -DCMAKE_C_FLAGS="-march=znver2 -mtune=znver2 -O3" \
   -DCMAKE_CXX_FLAGS="-march=znver2 -mtune=znver2 -O3" \
   -DGGML_OPENMP=OFF \
   -DGGML_LLAMAFILE=OFF \
-  -B build-android-ml2
+  -B build-ml2
 ```
 #### For Meta Quest 3
 ```
@@ -40,7 +40,7 @@ $ cmake \
   -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake \
   -DANDROID_ABI=arm64-v8a \
   -DANDROID_PLATFORM=latest \
-  -DCMAKE_C_FLAGS="-march=armv8.7a" \
+  -DCMAKE_C_FLAGS="-mtune=cortex-x4+cortex-a720 -O3" \
   -DCMAKE_CXX_FLAGS="-mtune=cortex-x4+cortex-a720 -O3" \
   -DGGML_OPENMP=OFF \
   -DGGML_LLAMAFILE=OFF \
