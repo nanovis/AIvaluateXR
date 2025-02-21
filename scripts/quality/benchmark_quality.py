@@ -31,8 +31,8 @@ def main():
         description="Run llama-perplexity benchmark tests.",
         epilog="Example:\n"
                "python benchmark_quality.py \\\n"
-               "--model path\\to\\model.gguf \\\n"
-               "--llama-perplexity path\\to\\bin\\llama-perplexity \\\n"
+               "--model \"path\\to\\model.gguf\" \\\n"
+               "--llama-perplexity \"path\\to\\bin\\llama-perplexity\" \\\n"
                "--mmlu --hellaswag \n",
         formatter_class=argparse.RawTextHelpFormatter
     )
