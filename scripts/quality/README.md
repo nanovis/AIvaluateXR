@@ -1,7 +1,7 @@
 # Quality Benchmark
 We used [perplexity](https://github.com/ggml-org/llama.cpp/tree/master/examples/perplexity) of Llama.cpp to test the quality of LLMs. We tested the **MMLU**, **Hellaswag**, **Winogrande**, **Arc-Challenge**, **wikitext** and **Truthful-QA**. Each test iterated 5 times. 
 
-Since the quality of LLMs doesn't vary from the devices where they are deployed, the quality benchmarks can be done on any device, preferably on the host PC for faster performance. Therefore, you will need to compile **llama.cpp for to your host PC**.
+Since the quality of LLMs doesn't vary from the devices where they are deployed, the quality benchmarks can be done on any device, preferably on the host PC for faster performance. Therefore, you will need to compile **llama.cpp for to your host PC** by following instructins [here](https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md).
 
 Here are all the [datasets](https://github.com/nanovis/LoXR/tree/main/scripts/Android_devices/quality/datasets).
 
