@@ -1,4 +1,4 @@
-# **LoXR: Performance Evaluation of Locally Executing LLMs on XR Devices**  
+# **AIvaluateXR: An Evaluation Framework for on-Device AI in XR with Benchmarking Results**  
 ![Teaser](images/LoXR.jpg)
 
 ## 🏆 **Acknowledgment**
