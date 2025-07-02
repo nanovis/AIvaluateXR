@@ -116,13 +116,7 @@ Below is the recommended directory layout for **AIvaluateXR**:
 AIvaluateXR/
 ├── docs/
 │   └── workflow.md               # Workflow documentation
-├── scripts/
-│   ├── benchmark.py              # Runs benchmarking tests and generates CSVs
-│   ├── merge_metrics.py          # Merges test outputs into a single CSV
-│   └── pareto.py                 # Performs Pareto front analysis
-├── models/                       # (Optional) Pretrained model files
-│   └── ...
-├── results/                      # (Optional) Output CSVs and analysis results
+├── scripts/                  # (Optional) Output CSVs and analysis results
 │   └── ...
 ├── README.md                     # Project overview and instructions
 ├── requirements.txt              # Python dependencies
@@ -135,7 +129,9 @@ AIvaluateXR/
 
 - [LoXR README](../README.md)
 - [Llama.cpp Repository](https://github.com/ggerganov/llama.cpp)
-- [LoXR Paper (arXiv)](https://arxiv.org/abs/2025.xxxxx)
+- [Paper (arXiv)](https://arxiv.org/abs/2502.15761)
+- [Paper (IEEE VR Poster)](https://ieeexplore.ieee.org/abstract/document/10973004)
+- [Project Website](https://www.nanovis.org/Loxr.html)
 
 ---
 
