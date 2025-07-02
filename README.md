@@ -43,6 +43,10 @@ git clone https://github.com/nanovis/LoXR.git
 cd LoXR
 
 
+#pareto analysis
+python scripts/pareto.py --csv metrics.csv
+```
+
 
 ## Publications
 
