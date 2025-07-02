@@ -2,12 +2,12 @@
 ![Teaser](images/LoXR.jpg)
 
 ## 🏆 **Acknowledgment**
-LoXR is built upon **[`llama.cpp`](https://github.com/ggml-org/llama.cpp)**.  [`llama.cpp`](https://github.com/ggml-org/llama.cpp) is an excellent C++ implementation for running LLMs efficiently on various hardware. 
+AIvaluateXR is built upon **[`llama.cpp`](https://github.com/ggml-org/llama.cpp)**.  [`llama.cpp`](https://github.com/ggml-org/llama.cpp) is an excellent C++ implementation for running LLMs efficiently on various hardware. 
 We deployed **LLMs** locally on **XR devices** by customizing the **[`llama.cpp`](https://github.com/ggml-org/llama.cpp)** for four different XR devices. 
 
 ## 🚀 **Overview**  
 
-**LoXR** is a framework for deploying and benchmarking **Large Language Models (LLMs) on XR devices**. It enables **on-device execution** of LLMs and provides tools for **performance analysis** across different XR platforms including:  
+**AIvaluateXR** is a framework for deploying and benchmarking **Large Language Models (LLMs) on XR devices**. It enables **on-device execution** of LLMs and provides tools for **performance analysis** across different XR platforms including:  
 
 -  **Apple Vision Pro**  
 -  **Magic Leap 2**  
@@ -18,7 +18,7 @@ We deployed **LLMs** locally on **XR devices** by customizing the **[`llama.cpp`
 
 
 ## 🎥 **LoXR Video Demo**
-[LoXR Video](https://youtu.be/7TrXLekrEyI)  
+[AIvaluateXR Video](https://youtu.be/7TrXLekrEyI)  
  ---
 
 ## 🔥 Script for the the Key Tests, including:  
@@ -48,6 +48,10 @@ python scripts/pareto.py --csv metrics.csv
 ```
 
 
+## 🛠️ **How to use it**  
+For detailed workflow instructions, see [Workflow Documentation](docs/workflow.md).
+
+
 ## Publications
 
   Dawar Khan, Xinyu Liu, Omar Mena, Donggang Jia, Alexandre Kouyoumdjian, Ivan Viola,
@@ -58,16 +62,20 @@ If you find our work useful, please consider citing our paper:
 ```bibtex
 
 
-@article{LoXR2025,
+@article{LoXR2025ArXiv,
   title        = {LoXR: Performance Evaluation of Locally Executing LLMs on XR Devices},
   author       = {Khan, Dawar and Liu, Xinyu and Mena, Omar and Jia, Donggang and Kouyoumdjian, Alexandre and Viola, Ivan},
   year         = 2025,
   journal      = {arxiv.org preprint },
 }
 
-@article{LoXR2025b,
-  title        = {LLMs on XR (LoXR): Performance Evaluation of LLMs Executed Locally on Extended Reality Devices},
-  author       = {Liu, Xinyu and Khan, Dawar and  Mena, Omar and Jia, Donggang and Kouyoumdjian, Alexandre and Viola, Ivan},
-  year         = 2025,
-  journal      = {IEEE VR 2025 Posters (accepted)},
-}
+@INPROCEEDINGS{LoXR:2025IEEVR,
+  author={Liu, Xinyu and Khan, Dawar and Mena, Omar and Jia, Donggang and Kouyoumdjian, Alexandre and Viola, Ivan},
+  booktitle={2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)}, 
+  title={LLMs on XR (LoXR): Performance Evaluation of LLMs Executed Locally on Extended Reality Devices}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1212-1213}, 
+  doi={10.1109/VRW66409.2025.00252}}
+
