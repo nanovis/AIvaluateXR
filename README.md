@@ -52,6 +52,51 @@ python scripts/pareto.py --csv metrics.csv
 For detailed workflow instructions, see [Workflow Documentation](docs/workflow.md).
 
 
+
+
+## 📂 Project Directory Structure
+
+Below is the recommended directory layout for **AIvaluateXR**:
+
+```
+AIvaluateXR/
+├── docs/
+│   └── workflow.md
+├── images/
+│   └── (images for documentation)
+├── scripts/
+│   ├── Android_devices/
+│   │   ├── battery_test/
+│   │   ├── memory_test/
+│   │   ├── speed_and_consistency_test/
+│   │   └── android_readme.md     # ✅ Shows how to use LLMs on ML2, MQ3, and Vivoo X100 Pro 
+│   │
+│   ├── AVP/
+│   │   ├── battery_test/
+│   │   ├── memory_test/
+│   │   ├── speed_and_consistency_test/
+│   │   └── avp_readme.md         # ✅ hows how to use LLMs on AVP 
+│   │
+│   ├── quality/
+│   │   └── datasets/
+│   │
+│   ├── merge_metrics.py
+│   └── pareto.py
+│
+├── README.md
+└── requirements.txt              # 
+
+```
+
+---
+
+## 📘 Additional Resources 
+- [Llama.cpp Repository](https://github.com/ggerganov/llama.cpp)
+- [Paper (arXiv)](https://arxiv.org/abs/2502.15761)
+- [Paper (IEEE VR Poster)](https://ieeexplore.ieee.org/abstract/document/10973004)
+- [Project Website](https://www.nanovis.org/Loxr.html)
+
+
 ## Publications
 
   Dawar Khan, Xinyu Liu, Omar Mena, Donggang Jia, Alexandre Kouyoumdjian, Ivan Viola,

@@ -59,13 +59,13 @@ A `pareto_front.csv` file highlighting configurations that offer optimal trade-o
 ## ✅ Example Workflow
 
 **Step 1 – Run benchmarks:**
+For each device you have to run the benchmarking scripts and get results in CSV. After this you have to merge the results and give them to the Pareto analysis module.
 
-```bash
-python scripts/benchmark.py --model Mistral-7B --device MagicLeap2 --test PP
-python scripts/benchmark.py --model Mistral-7B --device MagicLeap2 --test TG
-python scripts/benchmark.py --model Mistral-7B --device MagicLeap2 --test BT
-python scripts/benchmark.py --model Mistral-7B --device MagicLeap2 --test TT
-```
+## 🛠️ **Benchmarking on Android XR Devices**  
+For Magic Leap 2, Meta Quest 3 and Vivo X100 Pro, see the [Andriod Instructions](scripts/Android_devices/android_readme.md).
+
+## 🛠️ **Benchmarking on Apple Vision Pro**  
+For AVP see [Apple Vision Pro Instructions](scripts/avp/avp_readme.md).
 
 **Step 2 – Merge results:**
 
@@ -73,7 +73,7 @@ python scripts/benchmark.py --model Mistral-7B --device MagicLeap2 --test TT
 python scripts/merge_metrics.py \
   --inputs metrics_pp.csv metrics_tg.csv metrics_bt.csv metrics_tt.csv \
   --output metrics.csv
-```
+
 
 **Step 3 – Perform Pareto analysis:**
 
@@ -115,12 +115,31 @@ Below is the recommended directory layout for **AIvaluateXR**:
 ```
 AIvaluateXR/
 ├── docs/
-│   └── workflow.md               # Workflow documentation
-├── scripts/                  # (Optional) Output CSVs and analysis results
-│   └── ...
-├── README.md                     # Project overview and instructions
-├── requirements.txt              # Python dependencies
-└── ...
+│   └── workflow.md
+├── images/
+│   └── (images for documentation)
+├── scripts/
+│   ├── Android_devices/
+│   │   ├── battery_test/
+│   │   ├── memory_test/
+│   │   ├── speed_and_consistency_test/
+│   │   └── android_readme.md     # ✅ Shows how to use LLMs on ML2, MQ3, and Vivoo X100 Pro 
+│   │
+│   ├── AVP/
+│   │   ├── battery_test/
+│   │   ├── memory_test/
+│   │   ├── speed_and_consistency_test/
+│   │   └── avp_readme.md         # ✅ hows how to use LLMs on AVP 
+│   │
+│   ├── quality/
+│   │   └── datasets/
+│   │
+│   ├── merge_metrics.py
+│   └── pareto.py
+│
+├── README.md
+└── requirements.txt              # 
+
 ```
 
 ---
