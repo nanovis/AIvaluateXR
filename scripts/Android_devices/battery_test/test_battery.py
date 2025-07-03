@@ -19,7 +19,7 @@ command = f"adb -s {DEVICE_ADDR} shell dumpsys battery | findstr /R /C:\"level\"
 # command = f"adb -s {DEVICE_ADDR} shell dumpsys battery | grep \"level\""          # for Mac
 
 # set the output file path
-output_dir = r"C:\Users\Xinyu\Desktop\adb-cpu\results\Battery\magic leap"
+output_dir = r"C:\Users\adb-cpu\results\Battery\magic leap"
 
 # set count of test
 test_num = 3
@@ -61,7 +61,7 @@ def run_battery_check(check_command):
     try:
         result = subprocess.run(check_command, shell=True, capture_output=True, text=True)
 
-        # 将命令输出写入文件
+        # write output to file
         with open(output_file, "a", encoding="utf-8") as f:
             f.write(result.stdout)
             print(result)
@@ -88,13 +88,13 @@ for model_num in models_num:
     model = reverse_model_aliases.get(model_id)
     stop_event = threading.Event()
 
-    # 启动 test 函数的线程
+    # start test process
     test_thread = threading.Thread(target=test, args=(f'{device_name}', f'{device_port}', model, stop_event))
     test_thread.start()
 
     run_battery_checks(command, stop_event)
 
-    # 等待 test 线程完成
+    # wait for the test process to finish
     test_thread.join()
 
 
