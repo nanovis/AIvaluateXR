@@ -56,9 +56,11 @@ exit
 
 adb push ./build-android/bin /data/local/tmp/llama-cpp/
 ```
+<!-- 
 ### 4. Check if executable
 Check if the bin files executable on devices via ADB.
 ```
 adb shell
 cd /data/local/tmp/
 ```
+-->
