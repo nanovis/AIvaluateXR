@@ -61,11 +61,12 @@ A `pareto_front.csv` file highlighting configurations that offer optimal trade-o
 **Step 1 – Run benchmarks:**
 For each device you have to run the benchmarking scripts and get results in CSV. After this you have to merge the results and give them to the Pareto analysis module.
 
-## 🛠️ **Benchmarking on Android XR Devices**  
-For Magic Leap 2, Meta Quest 3 and Vivo X100 Pro, see the [Andriod Instructions](scripts/Android_devices/android_readme.md).
+## 🛠️ **Benchmarking on Android XR Devices**
+For Magic Leap 2, Meta Quest 3 and Vivo X100 Pro, see the [Android Instructions](../scripts/Android_devices/android_readme.md).
 
-## 🛠️ **Benchmarking on Apple Vision Pro**  
-For AVP see [Apple Vision Pro Instructions](scripts/avp/avp_readme.md).
+## 🛠️ **Benchmarking on Apple Vision Pro**
+For AVP see the [AVP Instructions](../scripts/AVP/avp_readme.md).
+
 
 **Step 2 – Merge results:**
 
