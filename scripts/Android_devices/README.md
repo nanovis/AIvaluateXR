@@ -1,7 +1,7 @@
 # **Android Devices** 
 For Android devices, the evaluation can be done via **Android Debug Bridge (ADB)**.
 ## Prepare Models
-You can download **gguf models** on huggingface. For example, you can download 
+You can download **gguf models** on huggingface. For example, you can download Phi-3.1-mini-4k-instruct-GGUF models [here](https://huggingface.co/lmstudio-community/Phi-3.1-mini-4k-instruct-GGUF/tree/main).
 ## Build Llama.cpp
 By following the command below, you can build Llama.cpp specified by different devices. Here we only provide the CLI about the Android devices mentioned in our paper, referencing [Build on Android](https://github.com/ggml-org/llama.cpp/blob/master/docs/android.md). You can modify the command for your device. 
 ### 1. Get llama.cpp
