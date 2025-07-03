@@ -2,7 +2,7 @@ import subprocess
 from time import sleep
 import os
 
-# device serials
+# device serial number
 MAGICLEAP=""
 VIVO=""
 QUEST3=""
