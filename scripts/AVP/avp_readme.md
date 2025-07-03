@@ -1,66 +1,94 @@
-# **Android Devices** 
-For Android devices, the evaluation can be done via **Android Debug Bridge (ADB)**.
-## Prepare Models
-You can download **gguf models** on huggingface. For example, you can download Phi-3.1-mini-4k-instruct-GGUF models [here](https://huggingface.co/lmstudio-community/Phi-3.1-mini-4k-instruct-GGUF/tree/main).
-## Build Llama.cpp
-By following the command below, you can build Llama.cpp specified by different devices. Here we only provide the CLI about the Android devices mentioned in our paper, referencing [Build on Android](https://github.com/ggml-org/llama.cpp/blob/master/docs/android.md). You can modify the command for your device. 
-### 1. Get llama.cpp
-```
-git clone https://github.com/ggml-org/llama.cpp.git
-cd ./llama.cpp
-```
-### 2. Cross-compile using Android NDK
-#### For Magic Leap 2
-```
-$ cmake \ 
-  -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake \
-  -DANDROID_ABI=x86_64 \
-  -DANDROID_PLATFORM=latest \
-  -DCMAKE_C_FLAGS="-march=znver2 -mtune=znver2 -O3" \
-  -DCMAKE_CXX_FLAGS="-march=znver2 -mtune=znver2 -O3" \
-  -DGGML_OPENMP=OFF \
-  -DGGML_LLAMAFILE=OFF \
-  -B build-ml2
-```
-#### For Meta Quest 3
-```
-$ cmake \
-  -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake \
-  -DANDROID_ABI=arm64-v8a \
-  -DANDROID_PLATFORM=latest \
-  -DCMAKE_C_FLAGS="-march=armv8.7a" \
-  -DCMAKE_CXX_FLAGS="-march=armv8.7a" \
-  -DGGML_OPENMP=OFF \
-  -DGGML_LLAMAFILE=OFF \
-  -B build-android-mq3
-```
-#### For Vivo X100 Pro
-```
-$ cmake \
-  -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake \
-  -DANDROID_ABI=arm64-v8a \
-  -DANDROID_PLATFORM=latest \
-  -DCMAKE_C_FLAGS="-mtune=cortex-x4+cortex-a720 -O3" \
-  -DCMAKE_CXX_FLAGS="-mtune=cortex-x4+cortex-a720 -O3" \
-  -DGGML_OPENMP=OFF \
-  -DGGML_LLAMAFILE=OFF \
-  -B build-android-vivo
-```
-### 3. Push files to devices
-Copy the bin and lib to devices
-```
-adb shell
-cd /data/local/tmp
-mkdir llama-cpp
-exit
+# 📘 Apple Vision Pro Benchmarking Instructions
 
-adb push ./build-android/bin /data/local/tmp/llama-cpp/
-```
-<!-- 
-### 4. Check if executable
-Check if the bin files executable on devices via ADB.
-```
-adb shell
-cd /data/local/tmp/
-```
--->
+This document provides guidance for running **AIvaluateXR** benchmarking tests on Apple Vision Pro.
+
+---
+
+## 🛠️ Prerequisites
+
+✅ Make sure you have:
+- Updated **Llama.cpp** to the latest build compatible with AVP.
+- Installed all necessary dependencies.
+
+---
+
+## ⚙️ Test Configuration
+
+Below are the instructions for configuring each test:
+
+---
+
+### 1️⃣ Prompt Processing (PP) Test
+
+**Purpose:** Measure prompt processing performance at different prompt sizes.
+
+✅ **Settings:**
+- **PP values:**  
+  `32, 64, 128, 512, 1024`
+- **TG value:**  
+  Fixed to `64`
+
+> **Example Command:**
+> ```bash
+> ./main -m ./models/your_model.gguf --pp 32 --tg 64
+> ```
+
+---
+
+### 2️⃣ Token Generation (TG) Test
+
+**Purpose:** Measure token generation throughput.
+
+✅ **Settings:**
+- **TG values:**  
+  `32, 64, 128, 512, 1024`
+- **PP value:**  
+  Fixed to `64`
+
+> **Example Command:**
+> ```bash
+> ./main -m ./models/your_model.gguf --pp 64 --tg 128
+> ```
+
+---
+
+### 3️⃣ Battery Consumption (BT) Test
+
+**Purpose:** Evaluate battery drain under load.
+
+✅ **Settings:**
+- **Batch sizes:**  
+  Use any of the batch values you want to test.
+
+> **Example Command:**
+> ```bash
+> ./main -m ./models/your_model.gguf --batch 8
+> ```
+
+---
+
+### 4️⃣ Total Throughput (TT) Test
+
+**Purpose:** Measure overall throughput with different threading configurations.
+
+✅ **Settings:**
+- **Threads:**  
+  Specify the thread counts you want to test.
+
+> **Example Command:**
+> ```bash
+> ./main -m ./models/your_model.gguf --threads 4
+> ```
+
+---
+
+## 📝 Notes
+
+- Adjust `--pp`, `--tg`, `--batch`, and `--threads` as needed for each test run.
+- Save the output CSVs after each test.
+- Proceed to merge and Pareto analysis as described in the [Workflow Guide](../../docs/workflow.md).
+
+---
+
+✅ **Questions or issues?**  
+Open an issue in the repository or contact the maintainers.
