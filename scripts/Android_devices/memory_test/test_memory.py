@@ -3,7 +3,7 @@ from time import sleep
 import os
 
 # set serial number
-MAGICLEAP = "GA62XT01M"
+MAGICLEAP = ""
 VIVO = ""
 QUEST3 = ""
 # set output path
