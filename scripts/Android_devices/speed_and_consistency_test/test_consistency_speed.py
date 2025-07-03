@@ -2,11 +2,13 @@ import subprocess
 from time import sleep
 import os
 
-MAGICLEAP="GA62XT0100BM"
-VIVO="10AE6J27L4000L3"
-QUEST3="2G0YC5ZFB709C6"
+# device serials
+MAGICLEAP=""
+VIVO=""
+QUEST3=""
+
 def create_folder(device, model):
-    folder_path = f"/Users/xinyu/Documents/chatterbox/speed/{device}/{model}"
+    folder_path = f"/Users/Documents/chatterbox/speed/{device}/{model}"
 
     # make sure the folder exists
     if not os.path.exists(folder_path):
@@ -53,37 +55,37 @@ def delete(output_file):
 
 def test(device, number, model):
     # consistency-short_prompt-n128
-    output0 = f"C:\\Users\\Xinyu\\Desktop\\adb-cpu\\results\\{device}\\{model}\\cli-short_prompt-n128.txt"
+    output0 = f"C:\\Users\\results\\{device}\\{model}\\cli-short_prompt-n128.txt"
     time0 = 20  # count for test
     command0 = f"adb -s {number} shell \"cd /data/local/tmp/adb-cpu/mcpu-cortex-x1/bin && export LD_LIBRARY_PATH=/data/local/tmp/adb-cpu/mcpu-cortex-x1/lib:$LD_LIBRARY_PATH && ./llama-cli -m /data/local/tmp/models/{model} \
                 -p 'Three advice on keeping healthy:' \
                 -n 128\""
 
     # consistency-long_prompt-n512
-    output1 = f"C:\\Users\\Xinyu\\Desktop\\adb-cpu\\results\\{device}\\{model}\\cli-long_prompt-n512.txt"
+    output1 = f"C:\\Users\\results\\{device}\\{model}\\cli-long_prompt-n512.txt"
     time1 = 20  # count for test
     command1 = f"adb -s {number} shell \"cd /data/local/tmp/adb-cpu/mcpu-cortex-x1/bin && export LD_LIBRARY_PATH=/data/local/tmp/adb-cpu/mcpu-cortex-x1/lib:$LD_LIBRARY_PATH && ./llama-cli -m /data/local/tmp/models/{model} \
                 -p 'Plan a 7-day itinerary for two people traveling from Austria to KAUST (King Abdullah University of Science and Technology) with a budget of 10,000 euros. The itinerary should include details on accommodations, meals, and activities for each day. One person in the group has a seafood allergy, so please ensure that meal recommendations are safe and suitable for them. The plan should be practical, well-balanced, and ready to use.' \
                 -n 512\""
 
     # bench-pp
-    output2 = f"C:\\Users\\Xinyu\\Desktop\\adb-cpu\\results\\{device}\\{model}\\bench-pp.txt"
+    output2 = f"C:\\Users\\results\\{device}\\{model}\\bench-pp.txt"
     time2 = 1  # llama-bench for once is to do the test for 5 times
     command2 = f"adb -s {number} shell \"cd /data/local/tmp/adb-cpu/mcpu-cortex-x1/bin && export LD_LIBRARY_PATH=/data/local/tmp/adb-cpu/mcpu-cortex-x1/lib:$LD_LIBRARY_PATH && ./llama-bench -m /data/local/tmp/models/{model}  -n 0 -p 64,128,256,512,1024 -o json\""
 
     # bench-tg
-    output3 = f"C:\\Users\\Xinyu\\Desktop\\adb-cpu\\results\\{device}\\{model}\\bench-tg.txt"
+    output3 = f"C:\\Users\\results\\{device}\\{model}\\bench-tg.txt"
     time3 = 1
     command3 = f"adb -s {number} shell \"cd /data/local/tmp/adb-cpu/mcpu-cortex-x1/bin && export LD_LIBRARY_PATH=/data/local/tmp/adb-cpu/mcpu-cortex-x1/lib:$LD_LIBRARY_PATH && ./llama-bench -m /data/local/tmp/models/{model} -p 0 -n 64,128,256,512,1024 -o json\""
 
     # bench-batch sizes
-    output4 = f"/Users/xinyu/Documents/chatterbox/speed/new-BT-on-{device}/{model}/bench-batch.txt"
+    output4 = f"C:\\Users\\results\\{device}\\{model}\\bench-batch.txt"
     create_folder(device, model)
     time4 = 1
     command4 = f"adb -s {number} shell \"cd /data/local/tmp/adb-cpu/mcpu-cortex-x1/bin && export LD_LIBRARY_PATH=/data/local/tmp/adb-cpu/mcpu-cortex-x1/lib:$LD_LIBRARY_PATH && ./llama-bench -m /data/local/tmp/models/{model} -n 0 -p 64 -b 128,256,512,1024 -o json\""
 
     # bench-threads
-    output5 = f"C:\\Users\\Xinyu\\Desktop\\adb-cpu\\results\\{device}\\{model}\\bench-threads.txt"
+    output5 = f"C:\\Users\\results\\{device}\\{model}\\bench-threads.txt"
     time5 = 1
     command5 = f"adb -s {number} shell \"cd /data/local/tmp/adb-cpu/mcpu-cortex-x1/bin && export LD_LIBRARY_PATH=/data/local/tmp/adb-cpu/mcpu-cortex-x1/lib:$LD_LIBRARY_PATH && ./llama-bench -m /data/local/tmp/models/{model} -n 0 -n 16 -p 64 -t 1,2,4,8,16,32 -o json\""
 
