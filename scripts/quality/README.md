@@ -48,3 +48,6 @@ python benchmark_quality.py \
 --mmlu --hellaswag --arc_challenge \
 --output-dir "path\to\output_folder"
 ```
+
+### 4. Results
+Running this script generates **TXT files** containing all test data in the `output-dir`. Results need to be manually extracted from the TXT files.
