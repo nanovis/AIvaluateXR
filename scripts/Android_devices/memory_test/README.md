@@ -20,7 +20,7 @@ Generates processed results in `memory.xlsx`.
 
 ​​**Required modifications:​**
 - `input_base_dir`: Raw TXT location
-- `output_dir`: Where to save memory.xlsx
+- `output_dir`: Where to save `memory.xlsx`
 - `devices`: Match device names in TXT paths
 - `models`: Match model names in TXT paths
 
