@@ -6,6 +6,7 @@
 This script generates raw TXT files containing all test results.  
 
 **Modify these parameters before running:**
+
 Directly modify these parameters in the script.
 - `VIVO, MAGICLEAP, QUEST`: device serial number (currently 3 predefined, you can add more)
 - `base_path`: output directory for TXT files
