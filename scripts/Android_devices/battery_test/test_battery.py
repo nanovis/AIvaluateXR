@@ -21,7 +21,7 @@ command = f"adb -s {DEVICE_ADDR} shell dumpsys battery | findstr /R /C:\"level\"
 # command = f"adb -s {DEVICE_ADDR} shell dumpsys battery | grep \"level\""          # for Mac
 
 # set the output file path
-output_dir = fr"C:\Users\results\Battery\{device_name}"
+output_dir = fr"C:\Users\results\BatteryTest"
 
 # set count of test
 test_num = 3
@@ -85,7 +85,8 @@ def run_battery_checks(command, stop_event):
 
 for model_num in models_num:
     model_id = f'm{model_num}'
-    output_file = os.path.join(output_dir, f"{model_id}.txt")
+    output_dev = os.path.join(output_dir, f"{device_name}")
+    output_file = os.path.join(output_dev, f"{model_id}.txt")
     delete(output_file)
     model = reverse_models.get(model_id)
     stop_event = threading.Event()
