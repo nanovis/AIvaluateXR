@@ -4,8 +4,7 @@ import os
 prompt = 'Plan a 7-day itinerary for two people traveling from Austria to KAUST (King Abdullah University of Science and Technology) with a budget of 10,000 euros. The itinerary should include details on accommodations, meals, and activities for each day. One person in the group has a seafood allergy, so please ensure that meal recommendations are safe and suitable for them. The plan should be practical, well-balanced, and ready to use.' \
 
 
-def create_folder(device, model):
-    folder_path = f"/Users/Documents/chatterbox/battery/{device}/{model}"
+def create_folder(folder_path, device, model):
 
     # check if folder exists
     if not os.path.exists(folder_path):
@@ -48,14 +47,16 @@ def delete(output_file):
 
 
 
-def test(device, number, model, stop_event):
-    output1 = f"/Users/Documents/chatterbox/battery/{device}/{model}/cli-long_prompt-n1024.txt"
+def test(folder_path, device, number, model, stop_event):
+    # folder_path = f"/Users/Documents/chatterbox/battery/{device}/{model}"
+
+    output = os.path.join(folder, "cli-long_prompt-n1024.txt")
     time1 = 1
     command1 = f"adb -s {number} shell \"cd /data/local/tmp/adb-cpu/mcpu-cortex-x1/bin && export LD_LIBRARY_PATH=/data/local/tmp/adb-cpu/mcpu-cortex-x1/lib:$LD_LIBRARY_PATH && ./llama-cli -m /data/local/tmp/models/{model} \
                 -p {prompt} \
                 -n 1024\""
 
-    create_folder(device, model)
+    create_folder(folder_path, device, model)
 
     while True:
         if stop_event.is_set():
