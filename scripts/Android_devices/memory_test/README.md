@@ -5,9 +5,7 @@
 ### 1. Run `test_memory.py`
 This script generates raw TXT files containing all test results.  
 
-**Modify these parameters before running:**
-
-Directly modify these parameters in the script.
+**Directly modify these parameters in the script before running:**
 - `VIVO, MAGICLEAP, QUEST`: device serial number (currently 3 predefined, you can add more)
 - `base_path`: output directory for TXT files
 - `command0, command1`: Update paths to bin files, lib files and model files stored in devices
