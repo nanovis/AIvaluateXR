@@ -9,6 +9,8 @@ DEVICE_ADDR = '192.168.1.49:7777' # set the addr of the device
 
 models_num = [1,2,5,6,11,12,13,17]  # models for test
 
+# set the 
+
 # set the device
 device_name = 'magic leap'
 device_addr = DEVICE_ADDR
@@ -19,7 +21,7 @@ command = f"adb -s {DEVICE_ADDR} shell dumpsys battery | findstr /R /C:\"level\"
 # command = f"adb -s {DEVICE_ADDR} shell dumpsys battery | grep \"level\""          # for Mac
 
 # set the output file path
-output_dir = r"C:\Users\adb-cpu\results\Battery\magic leap"
+output_dir = fr"C:\Users\results\Battery\{device_name}"
 
 # set count of test
 test_num = 3
@@ -89,7 +91,7 @@ for model_num in models_num:
     stop_event = threading.Event()
 
     # start test process
-    test_thread = threading.Thread(target=test, args=(f'{device_name}', f'{device_port}', model, stop_event))
+    test_thread = threading.Thread(target=test, args=(f'{output_dir}', f'{device_name}', f'{device_addr}', model, stop_event))
     test_thread.start()
 
     run_battery_checks(command, stop_event)
