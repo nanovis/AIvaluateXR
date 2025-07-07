@@ -32,7 +32,7 @@ time_sleep = 60 * 5 # 5 min
 
 
 
-model_aliases = {
+models = {
     "qwen2-0_5b-instruct-fp16.gguf": "m1", "Vikhr-Gemma-2B-instruct-Q3_K_M.gguf": "m2",
     "Vikhr-Gemma-2B-instruct-Q4_0.gguf": "m3", "Vikhr-Gemma-2B-instruct-Q5_0.gguf": "m4",
     "Vikhr-Gemma-2B-instruct-Q6_K.gguf": "m5", "Phi-3.1-mini-4k-instruct-Q2_K.gguf": "m6",
@@ -44,7 +44,7 @@ model_aliases = {
     "Mistral-7B-Instruct-v0.3.IQ4_XS.gguf": "m17"
 }
 
-reverse_model_aliases = {value: key for key, value in model_aliases.items()}
+reverse_models = {value: key for key, value in models.items()}
 
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
@@ -85,7 +85,7 @@ for model_num in models_num:
     model_id = f'm{model_num}'
     output_file = os.path.join(output_dir, f"{model_id}.txt")
     delete(output_file)
-    model = reverse_model_aliases.get(model_id)
+    model = reverse_models.get(model_id)
     stop_event = threading.Event()
 
     # start test process
