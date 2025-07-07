@@ -2,8 +2,7 @@ import os
 import re
 import pandas as pd
 
-input_base_dir = r"C:\User\results\memory_test"
-output_dir = r'C:\Users\results\memory_test'
+
 
 
 def extract_memory_usage(file_path, is_s128):
@@ -114,6 +113,8 @@ def generate_excel_for_memory_usage(devices, models):
 
 
 if __name__ == "__main__":
+    input_base_dir = r"C:\User\results\memory_test"
+    output_dir = r'C:\Users\results\memory_test'
     # devices and models
     devices = ["magicleap", "vivo", "quest3"]
     models = [
