@@ -7,15 +7,24 @@ MAGICLEAP=""
 VIVO=""
 QUEST3=""
 
-def create_folder(device, model):
-    folder_path = f"/Users/Documents/chatterbox/speed/{device}/{model}"
+# set output dir
+output_dir = "/Users/Consistency_&_Speed"
 
+# set path to llama.cpp binary/library/model files on device
+bin_dir = "/data/local/tmp/adb-cpu/mcpu-cortex-x1/bin"
+lib_dir = "/data/local/tmp/adb-cpu/mcpu-cortex-x1/lib"
+model_dir = "/data/local/tmp/adb-cpu/model"
+
+def create_folder(device, model):
+    folder_path = os.path.join(output_dir, device, model)
+    print(folder_path)
     # make sure the folder exists
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
         print(f"folder {folder_path} created")
     else:
         print(f"folder {folder_path} exists")
+    return folder_path
 
 def execute_commands(loop_command, number_of_runs, output_file):
     # run a python terminal
@@ -54,40 +63,42 @@ def delete(output_file):
 
 
 def test(device, number, model):
+    # create folder for TXT results
+    output_path = create_folder(device, model)
+
     # consistency-short_prompt-n128
-    output0 = f"C:\\Users\\results\\{device}\\{model}\\cli-short_prompt-n128.txt"
+    output0 = os.path.join(output_path, "cli-short_prompt-n128.txt")
     time0 = 20  # count for test
-    command0 = f"adb -s {number} shell \"cd /data/local/tmp/adb-cpu/mcpu-cortex-x1/bin && export LD_LIBRARY_PATH=/data/local/tmp/adb-cpu/mcpu-cortex-x1/lib:$LD_LIBRARY_PATH && ./llama-cli -m /data/local/tmp/models/{model} \
+    command0 = f"adb -s {number} shell \"cd {bin_dir} && export LD_LIBRARY_PATH={lib_dir}:$LD_LIBRARY_PATH && ./llama-cli -m {model_dir}/{model} \
                 -p 'Three advice on keeping healthy:' \
                 -n 128\""
 
     # consistency-long_prompt-n512
-    output1 = f"C:\\Users\\results\\{device}\\{model}\\cli-long_prompt-n512.txt"
+    output1 = os.path.join(output_path, "cli-long_prompt-n512.txt")
     time1 = 20  # count for test
-    command1 = f"adb -s {number} shell \"cd /data/local/tmp/adb-cpu/mcpu-cortex-x1/bin && export LD_LIBRARY_PATH=/data/local/tmp/adb-cpu/mcpu-cortex-x1/lib:$LD_LIBRARY_PATH && ./llama-cli -m /data/local/tmp/models/{model} \
+    command1 = f"adb -s {number} shell \"cd {bin_dir} && export LD_LIBRARY_PATH={lib_dir}:$LD_LIBRARY_PATH && ./llama-cli -m {model_dir}/{model} \
                 -p 'Plan a 7-day itinerary for two people traveling from Austria to KAUST (King Abdullah University of Science and Technology) with a budget of 10,000 euros. The itinerary should include details on accommodations, meals, and activities for each day. One person in the group has a seafood allergy, so please ensure that meal recommendations are safe and suitable for them. The plan should be practical, well-balanced, and ready to use.' \
                 -n 512\""
 
     # bench-pp
-    output2 = f"C:\\Users\\results\\{device}\\{model}\\bench-pp.txt"
+    output2 = os.path.join(output_path, "bench-pp.txt")
     time2 = 1  # llama-bench for once is to do the test for 5 times
-    command2 = f"adb -s {number} shell \"cd /data/local/tmp/adb-cpu/mcpu-cortex-x1/bin && export LD_LIBRARY_PATH=/data/local/tmp/adb-cpu/mcpu-cortex-x1/lib:$LD_LIBRARY_PATH && ./llama-bench -m /data/local/tmp/models/{model}  -n 0 -p 64,128,256,512,1024 -o json\""
+    command2 = f"adb -s {number} shell \"cd {bin_dir} && export LD_LIBRARY_PATH={lib_dir}:$LD_LIBRARY_PATH && ./llama-bench -m {model_dir}/{model}  -n 0 -p 64,128,256,512,1024 -o json\""
 
     # bench-tg
-    output3 = f"C:\\Users\\results\\{device}\\{model}\\bench-tg.txt"
+    output3 = os.path.join(output_path, "bench-tg.txt")
     time3 = 1
-    command3 = f"adb -s {number} shell \"cd /data/local/tmp/adb-cpu/mcpu-cortex-x1/bin && export LD_LIBRARY_PATH=/data/local/tmp/adb-cpu/mcpu-cortex-x1/lib:$LD_LIBRARY_PATH && ./llama-bench -m /data/local/tmp/models/{model} -p 0 -n 64,128,256,512,1024 -o json\""
+    command3 = f"adb -s {number} shell \"cd {bin_dir} && export LD_LIBRARY_PATH={lib_dir}:$LD_LIBRARY_PATH && ./llama-bench -m {model_dir}/{model} -p 0 -n 64,128,256,512,1024 -o json\""
 
-    # bench-batch sizes
-    output4 = f"C:\\Users\\results\\{device}\\{model}\\bench-batch.txt"
-    create_folder(device, model)
+    # bench-batch size
+    output4 = os.path.join(output_path, "bench-batch.txt")
     time4 = 1
-    command4 = f"adb -s {number} shell \"cd /data/local/tmp/adb-cpu/mcpu-cortex-x1/bin && export LD_LIBRARY_PATH=/data/local/tmp/adb-cpu/mcpu-cortex-x1/lib:$LD_LIBRARY_PATH && ./llama-bench -m /data/local/tmp/models/{model} -n 0 -p 64 -b 128,256,512,1024 -o json\""
+    command4 = f"adb -s {number} shell \"cd {bin_dir} && export LD_LIBRARY_PATH={lib_dir}:$LD_LIBRARY_PATH && ./llama-bench -m {model_dir}/{model} -n 0 -p 64 -b 128,256,512,1024 -o json\""
 
     # bench-threads
-    output5 = f"C:\\Users\\results\\{device}\\{model}\\bench-threads.txt"
+    output5 = os.path.join(output_path, "bench-threads.txt")
     time5 = 1
-    command5 = f"adb -s {number} shell \"cd /data/local/tmp/adb-cpu/mcpu-cortex-x1/bin && export LD_LIBRARY_PATH=/data/local/tmp/adb-cpu/mcpu-cortex-x1/lib:$LD_LIBRARY_PATH && ./llama-bench -m /data/local/tmp/models/{model} -n 0 -n 16 -p 64 -t 1,2,4,8,16,32 -o json\""
+    command5 = f"adb -s {number} shell \"cd {bin_dir} && export LD_LIBRARY_PATH={lib_dir}:$LD_LIBRARY_PATH && ./llama-bench -m {model_dir}/{model} -n 0 -n 16 -p 64 -t 1,2,4,8,16,32 -o json\""
 
     delete(output0)
     delete(output1)
@@ -129,7 +140,3 @@ if __name__ == "__main__":
     test("quest3", QUEST3, "Phi-3.1-mini-4k-instruct-Q6_K.gguf")
     test("quest3", QUEST3, "Phi-3.1-mini-4k-instruct-Q8_0.gguf")
     test("quest3", QUEST3, "qwen2-0_5b-instruct-fp16.gguf")
-
-
-
-
