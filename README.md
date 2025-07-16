@@ -39,8 +39,8 @@ We deployed **LLMs** locally on **XR devices** by customizing the **[`llama.cpp`
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/nanovis/LoXR.git
-cd LoXR
+git clone https://github.com/nanovis/AIvaluateXR.git
+cd AIvaluateXR
 
 
 #pareto analysis
@@ -94,7 +94,7 @@ AIvaluateXR/
 - [Llama.cpp Repository](https://github.com/ggerganov/llama.cpp)
 - [Paper (arXiv)](https://arxiv.org/abs/2502.15761)
 - [Paper (IEEE VR Poster)](https://ieeexplore.ieee.org/abstract/document/10973004)
-- [Project Website](https://www.nanovis.org/Loxr.html)
+- [Project Website](https://www.nanovis.org/AIvaluateXR.html)
 
 
 ## Publications
